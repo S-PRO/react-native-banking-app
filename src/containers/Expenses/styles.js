@@ -26,7 +26,6 @@ export default StyleSheet.create({
   },
   mainValueContainer: {
     width: '100%',
-    height: 64,
     flexDirection: 'column',
     marginTop: 30,
   },
@@ -66,6 +65,7 @@ export default StyleSheet.create({
 
   sectionList: {
     marginTop: 45,
+    height: 20,
     marginHorizontal: 21
   },
 
@@ -79,14 +79,30 @@ export default StyleSheet.create({
   itemContainer: {
     height: 80,
     flex: 1,
+    paddingHorizontal: 20,
     flexDirection: 'row'
   },
+
+  typeContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 27,
+    marginVertical: 20,
+    height: 50,
+    alignItems: 'center',
+    backgroundColor: 'green'
+  },
+
+  image: {
+    height: 44,
+    width: 44
+  },
+
   itemDetailsContainer: {
     flexDirection: 'column',
-    marginLeft: 80,
+    marginLeft: 16,
     width: 180,
     height: 50,
-    alignSelf: 'center'
   },
 
   itemDetailsTitle: {
@@ -104,9 +120,11 @@ export default StyleSheet.create({
     fontSize: 14,
     lineHeight: 19
   },
+
   itemDetailsValue: {
     width: 70,
     height: 50,
+    flex: 1,
     alignSelf: 'center',
     fontFamily: FONTS.AVENIR_NEXT_MEDIUM,
     textAlign: "right",
@@ -114,4 +132,5 @@ export default StyleSheet.create({
     fontSize: 16,
     lineHeight: 22
   }
+
 });

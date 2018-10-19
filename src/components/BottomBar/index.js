@@ -39,12 +39,7 @@ export default class extends Component<_t_props, _t_state> {
   render() {
 
     return (
-      <View style={{
-        height: 83,
-        width: '100%',
-        flexDirection: 'row'
-      }}
-      >
+      <View style={styles.container}>
         <TouchableOpacity
           style={styles.homeBtn}
         >

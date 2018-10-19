@@ -6,13 +6,16 @@ import {
   Text,
   View,
   TouchableOpacity,
-  SectionList
+  FlatList,
+  Image
 } from 'react-native';
 
 /* MODULES */
 import { Actions } from 'react-native-router-flux';
 
 import BottomBar from '../../components/BottomBar';
+import HeaderNavigation from '../../components/HeaderNavigation';
+import TypeContainer from '../../components/TypeContainer';
 
 /* CONFIGS */
 import COLORS from '../../config/colors';
@@ -31,17 +34,28 @@ type _t_state = {
 
 const listData = [
   {
-    title: 'TODAY',
-    data: [
-      { title: 'Pandora', subTitle: 'Monthly subscription', value: '$5.00' }
-    ]
+    image: IMAGES.SUITCASE,
+    title: 'Travel',
+    subtitle: '$425.00',
+    persentValue: '50%'
   },
   {
-    title: 'YESTURDAY',
-    data: [
-      { title: 'JesicaReynols', subTitle: 'Payback time :)', value: '$3.65' },
-      { title: 'Exchange', subTitle: 'USD to EUR', value: '$129.00' }
-    ]
+    image: IMAGES.BASKET,
+    title: 'Groceries',
+    subtitle: '$213.00',
+    persentValue: '25%'
+  },
+  {
+    image: IMAGES.FOOD,
+    title: 'Restaurants',
+    subtitle: '$82.25',
+    persentValue: '10%'
+  },
+  {
+    image: IMAGES.BUS,
+    title: 'Public transport',
+    subtitle: '$40.50',
+    persentValue: '5%'
   }
 ];
 
@@ -50,49 +64,62 @@ export default class extends Component<_t_props, _t_state> {
     super(props);
 
     this.state = {
-      mainValue: "$7'265.50",
-      equivalentValue: "$15'320.00",
+      titleValue: "$850.50",
     };
   }
 
-  renderSectionHeader = ({ section: { title } }) => (
-    <Text style={styles.sectionHeader}>{title}</Text>
-  )
-
   renderItem = ({ item, index }) => (
-    <TouchableOpacity
-      onPress={() => Actions.Expenses()}
+    <View
       key={index}
       style={styles.itemContainer}
     >
+      <Image
+        style={styles.image}
+        resizeMode="stretch"
+        source={item.image}
+      />
+
       <View style={styles.itemDetailsContainer}>
         <Text
+          numberOfLines={1}
           style={styles.itemDetailsTitle}
         >
           {item.title}
         </Text>
         <Text
+          numberOfLines={1}
           style={styles.itemDetailsSubTitle}
         >
-          {item.subTitle}
+          {item.subtitle}
         </Text>
       </View>
       <Text
         numberOfLines={1}
         style={styles.itemDetailsValue}
       >
-        {item.value}
+        {item.persentValue}
       </Text>
-    </TouchableOpacity>
+    </View>
   )
 
   render() {
     const {
-      mainValue,
-      equivalentValue
+      titleValue
     } = this.state;
     return (
       <View style={styles.container}>
+
+        <HeaderNavigation
+          leftPart={{
+            symbol: 'arrow_left',
+            onPress: () => { Actions.pop(); }
+          }}
+
+          centerPart={{
+            title: TEXT_CONSTANTS.EXPENDITURE.HEADER_TITLE
+          }}
+        />
+
         <View style={styles.topBtnContiner}>
           <TouchableOpacity style={styles.topBtn}>
             <Text style={styles.currencyName}>
@@ -105,43 +132,37 @@ export default class extends Component<_t_props, _t_state> {
             </Text>
           </TouchableOpacity>
         </View>
+
         <View style={styles.mainValueContainer}>
           <Text
             numberOfLines={1}
             style={styles.mainValue}
           >
-            {mainValue}
+            {titleValue}
           </Text>
           <Text
             numberOfLines={1}
             style={styles.mainValueSubtitle}
           >
-            {TEXT_CONSTANTS.MAIN.MAIN_VALUE_SUBTITLE}
-          </Text>
-        </View>
-
-        <View style={styles.equivalentValueContainer}>
-          <Text
-            numberOfLines={1}
-            style={styles.equivalentValue}
-          >
-            {equivalentValue}
+            {TEXT_CONSTANTS.EXPENDITURE.VALUE_SUBTITLE}
           </Text>
           <Text
             numberOfLines={1}
-            style={styles.equivalentSubtitle}
+            style={styles.mainValueSubtitle}
           >
-            {TEXT_CONSTANTS.MAIN.EQUIVALENT_VALUE_SUBTITLE}
+            {TEXT_CONSTANTS.EXPENDITURE.VALUE_DURATION}
           </Text>
         </View>
 
-        <SectionList
-          style={styles.sectionList}
+        <TypeContainer />
+
+        <FlatList
+          style={styles.list}
+          data={listData}
           renderItem={this.renderItem}
-          renderSectionHeader={this.renderSectionHeader}
-          sections={listData}
           keyExtractor={(item, index) => item + index}
         />
+
         <BottomBar />
 
       </View>
