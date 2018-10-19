@@ -1,0 +1,17 @@
+const COLORS = {
+  WHITE: '#FFFFFF',
+  CURRENCY_TOP_TITLE: '#1F3F66',
+
+  MAIN: {
+    MAIN_VALUE: '#1F3F66',
+    SECTION_HEADER: '#7A8899',
+    LIST_ITEM_TITLE: '#242B33',
+    LIST_ITEM_SUBTITLE: '#8A9199',
+    LIST_ITEM_VALUE: '#1F2833'
+  },
+  BOTTOM_MENU: {
+    ICON_FILL: '#8F9FB3'
+  }
+};
+
+export default COLORS;
