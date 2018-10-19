@@ -4,26 +4,24 @@ import FONTS from '../../config/fonts';
 
 export default StyleSheet.create({
   container: {
-    height: 83,
+    height: 50,
     width: '100%',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center'
   },
 
   homeBtn: {
     flex: 1,
-    paddingTop: 8,
     paddingLeft: 21
   },
 
   statBtn: {
     flex: 1,
-    paddingTop: 8,
     paddingLeft: 21
   },
 
   notificationBtn: {
     flex: 4,
-    paddingTop: 8,
     alignItems: 'center'
   },
 });

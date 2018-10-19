@@ -3,6 +3,11 @@ import COLORS from '../../config/colors';
 import FONTS from '../../config/fonts';
 
 export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.WHITE,
+    flexDirection: 'column'
+  },
   currencyName: {
     fontFamily: FONTS.AVENIR_NEXT_MEDIUM,
     textAlign: "center",
@@ -61,7 +66,6 @@ export default StyleSheet.create({
 
   sectionList: {
     marginTop: 45,
-    height: 20,
     marginHorizontal: 21
   },
 
@@ -81,7 +85,7 @@ export default StyleSheet.create({
     flexDirection: 'column',
     marginLeft: 80,
     width: 180,
-    height: 43,
+    height: 50,
     alignSelf: 'center'
   },
 
@@ -102,6 +106,7 @@ export default StyleSheet.create({
   },
   itemDetailsValue: {
     width: 70,
+    height: 50,
     alignSelf: 'center',
     fontFamily: FONTS.AVENIR_NEXT_MEDIUM,
     textAlign: "right",

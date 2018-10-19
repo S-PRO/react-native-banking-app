@@ -60,7 +60,8 @@ export default class extends Component<_t_props, _t_state> {
   )
 
   renderItem = ({ item, index }) => (
-    <View
+    <TouchableOpacity
+      onPress={() => Actions.Expenses()}
       key={index}
       style={styles.itemContainer}
     >
@@ -82,7 +83,7 @@ export default class extends Component<_t_props, _t_state> {
       >
         {item.value}
       </Text>
-    </View>
+    </TouchableOpacity>
   )
 
   render() {
@@ -91,7 +92,7 @@ export default class extends Component<_t_props, _t_state> {
       equivalentValue
     } = this.state;
     return (
-      <View style={{ flex: 1, backgroundColor: COLORS.WHITE, flexDirection: 'column' }}>
+      <View style={styles.container}>
         <View style={styles.topBtnContiner}>
           <TouchableOpacity style={styles.topBtn}>
             <Text style={styles.currencyName}>
