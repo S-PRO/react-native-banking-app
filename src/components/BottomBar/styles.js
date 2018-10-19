@@ -3,6 +3,12 @@ import COLORS from '../../config/colors';
 import FONTS from '../../config/fonts';
 
 export default StyleSheet.create({
+  container: {
+    height: 83,
+    width: '100%',
+    flexDirection: 'row'
+  },
+
   homeBtn: {
     flex: 1,
     paddingTop: 8,
