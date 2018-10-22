@@ -52,17 +52,22 @@ export default class extends Component<_t_props, _t_state> {
     if (leftPart) {
       const {
         symbol,
-        onPress
+        onPress,
+        size
       } = leftPart;
 
       return (
         <TouchableOpacity
           style={styles.leftPartContainer}
-          onPress={onPress}
+          onPress={() => {
+            if (onPress) {
+              onPress();
+            }
+          }}
         >
           <Icon
             name={symbol}
-            size={14}
+            size={size}
             color={COLORS.HEADER.BACK_BTN}
           />
         </TouchableOpacity>
@@ -108,17 +113,22 @@ export default class extends Component<_t_props, _t_state> {
     if (rightPart) {
       const {
         symbol,
-        onPress
+        onPress,
+        size
       } = rightPart;
 
       return (
         <TouchableOpacity
           style={styles.rightPartContainer}
-          onPress={onPress}
+          onPress={() => {
+            if (onPress) {
+              onPress();
+            }
+          }}
         >
           <Icon
             name={symbol}
-            size={14}
+            size={size}
             color={COLORS.HEADER.BACK_BTN}
           />
         </TouchableOpacity>
@@ -136,8 +146,14 @@ export default class extends Component<_t_props, _t_state> {
     const leftPart = this._renderLeftPart();
     const centerPart = this._renderCenterPart();
     const rightPart = this._renderRightPart();
+
+    const {
+      customStyle
+    } = this.props;
+
+    const additionalStyle = customStyle || {};
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, additionalStyle]}>
         {leftPart}
         {centerPart}
         {rightPart}

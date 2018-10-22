@@ -10,7 +10,7 @@ export default StyleSheet.create({
 
   leftPartContainer: {
     position: 'absolute',
-    left: 8,
+    left: 20,
     width: 44,
     height: 44
   },
@@ -25,7 +25,7 @@ export default StyleSheet.create({
 
   rightPartContainer: {
     position: 'absolute',
-    right: 8,
+    right: 0,
     width: 44,
     height: 44
   },

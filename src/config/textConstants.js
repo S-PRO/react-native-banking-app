@@ -15,6 +15,15 @@ const TEXT_CONSTANTS = {
     COUNTRY: 'COUNTRY'
   },
 
+  ACCOUNT: {
+    NAME: 'Richard Jefferson',
+    STANDART_ACCOUNT: 'standart account',
+    UPGRADE: 'upgrade',
+    INSURANCE: 'Insurance',
+    SAVINGS: 'Savings',
+    CREDIT: 'Credit'
+  }
+
 };
 
 export default TEXT_CONSTANTS;

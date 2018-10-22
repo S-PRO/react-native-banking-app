@@ -112,6 +112,7 @@ export default class extends Component<_t_props, _t_state> {
         <HeaderNavigation
           leftPart={{
             symbol: 'arrow_left',
+            size: 14,
             onPress: () => { Actions.pop(); }
           }}
 
