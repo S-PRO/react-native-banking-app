@@ -42,6 +42,9 @@ export default class extends Component<_t_props, _t_state> {
       <View style={styles.container}>
         <TouchableOpacity
           style={styles.homeBtn}
+          onPress={() => {
+            Actions.Main();
+          }}
         >
           <Icon
             name="home"
@@ -52,6 +55,9 @@ export default class extends Component<_t_props, _t_state> {
 
         <TouchableOpacity
           style={styles.statBtn}
+          onPress={() => {
+            Actions.Account();
+          }}
         >
           <Icon
             name="stats"

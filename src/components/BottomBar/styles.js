@@ -4,6 +4,8 @@ import FONTS from '../../config/fonts';
 
 export default StyleSheet.create({
   container: {
+    position: 'absolute',
+    bottom: 0,
     height: 50,
     width: '100%',
     flexDirection: 'row',

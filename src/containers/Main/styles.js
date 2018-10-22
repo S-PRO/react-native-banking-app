@@ -66,6 +66,7 @@ export default StyleSheet.create({
 
   sectionList: {
     marginTop: 45,
+    marginBottom: 44,
     marginHorizontal: 21
   },
 
